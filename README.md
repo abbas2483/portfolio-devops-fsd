@@ -4,7 +4,7 @@ Ultra-modern portfolio website for DevOps/Cloud Engineers featuring an advanced 
 
 ## 🌟 Live Demo
 
-**[View Live Website →]([https://devops-portfolio-pawan.vercel.app](https://devops-portfolio-pawan.vercel.app))**
+**[View Live Website → devops-portfolio-pawan.vercel.app](https://devops-portfolio-pawan.vercel.app)**
 
 ---
 
@@ -109,18 +109,23 @@ Update content in component files:
 
 ## 🚀 Deployment
 
-The project is configured for seamless deployment on Vercel:
+The project is deployed on Vercel with automatic CI/CD:
+
+### **Live URL**
+🔗 **[https://devops-portfolio-pawan.vercel.app](https://devops-portfolio-pawan.vercel.app)**
 
 ### **Automatic Deployment**
-- Changes pushed to `main` branch trigger automatic builds
+- Every push to `main` branch triggers an automatic build and redeploy
+- Average deployment time: ~30 seconds
 - Custom domain support included
 
 ### **Manual Deployment**
 ```bash
-# Build and deploy
+# Build for production
 npm run build
 
-# Deploy to Vercel (configured via vercel.json)
+# Deploy via Vercel CLI
+vercel --prod
 ```
 
 ---
@@ -220,6 +225,7 @@ This portfolio showcases DevOps and Cloud Engineering expertise with modern web 
 
 ## 🔗 Links
 
+- **Live Website**: [https://devops-portfolio-pawan.vercel.app](https://devops-portfolio-pawan.vercel.app)
 - **GitHub Repository**: [https://github.com/pawanpatil2108/devops-portfolio-Pawan](https://github.com/pawanpatil2108/devops-portfolio-Pawan)
 - **Personal GitHub**: [https://github.com/pawanpatil2108](https://github.com/pawanpatil2108)
 
