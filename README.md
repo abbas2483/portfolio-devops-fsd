@@ -1,4 +1,4 @@
-# Cyber Terminal Portfolio
+# DevOps Terminal Portfolio
 
 Ultra-modern portfolio website for DevOps/Cloud Engineers featuring an advanced cyber terminal aesthetic with interactive blog and comprehensive case studies.
 
