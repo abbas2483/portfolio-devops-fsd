@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, Code2 } from 'lucide-react';
+import { Braces, CloudCog, Database, ExternalLink, Github, Code2, Server, TerminalSquare } from 'lucide-react';
 import { Grid3DBackground } from '../components/Grid3D';
 import { Typewriter } from '../components/Typewriter';
-import { HERO_CONTENT, SKILLS, PROJECTS } from '../data/portfolio';
+import { HERO_CONTENT, SKILLS, CONTACT } from '../data/portfolio';
 
 export const Home = () => {
   const stats = [
-    { label: 'Years Experience', value: '< 1' },
-    { label: 'Cloud Platforms', value: '2' },
-    { label: 'Projects Completed', value: '2+' },
-    { label: 'Technologies', value: '15+' },
+    { label: 'Full-Stack Projects', value: '2' },
+    { label: 'Cloud Platforms', value: '4' },
+    { label: 'Projects & Experiments', value: '4' },
+    { label: 'Technologies', value: '25+' },
   ];
 
   const featuredSkills = SKILLS.slice(0, 6);
@@ -22,6 +22,50 @@ export const Home = () => {
       
       {/* Main Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        {/* Decorative infrastructure and full-stack illustrations */}
+        <div
+          className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block"
+          aria-hidden="true"
+        >
+          {/* Server / infrastructure illustration */}
+          <div className="absolute left-[4%] top-10 text-primary-500/20 animate-float">
+            <div className="relative flex h-64 w-44 flex-col items-center justify-center rounded-2xl border border-primary-500/20 bg-bg-surface/30 shadow-glow backdrop-blur-[2px]">
+              <Server className="h-28 w-28 stroke-[1.15]" />
+              <div className="absolute bottom-9 flex gap-2">
+                <span className="h-2 w-2 rounded-full bg-primary-500/70" />
+                <span className="h-2 w-2 rounded-full bg-accent-500/70" />
+                <span className="h-2 w-2 rounded-full bg-primary-500/40" />
+              </div>
+              <div className="absolute -right-8 top-8 h-px w-10 bg-primary-500/40" />
+              <div className="absolute -right-9 top-7 h-3 w-3 rounded-full border border-primary-500/50" />
+              <div className="absolute -left-7 bottom-12 h-px w-8 bg-primary-500/30" />
+            </div>
+          </div>
+
+          {/* Full-stack development icon cluster */}
+          <div className="absolute bottom-10 right-[3%] h-72 w-64 text-primary-500/25">
+            <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary-500/25 bg-bg-surface/30 shadow-glow backdrop-blur-[2px]">
+              <Braces className="h-14 w-14 stroke-[1.25]" />
+            </div>
+            <div className="absolute left-0 top-6 flex h-16 w-16 items-center justify-center rounded-xl border border-primary-500/20 bg-bg-elevated/30 animate-float">
+              <TerminalSquare className="h-8 w-8 stroke-[1.35]" />
+            </div>
+            <div className="absolute right-0 top-8 flex h-16 w-16 items-center justify-center rounded-xl border border-primary-500/20 bg-bg-elevated/30 animate-float [animation-delay:700ms]">
+              <Database className="h-8 w-8 stroke-[1.35]" />
+            </div>
+            <div className="absolute bottom-5 left-5 flex h-16 w-16 items-center justify-center rounded-xl border border-primary-500/20 bg-bg-elevated/30 animate-float [animation-delay:1300ms]">
+              <CloudCog className="h-8 w-8 stroke-[1.35]" />
+            </div>
+            <div className="absolute bottom-5 right-5 flex h-16 w-16 items-center justify-center rounded-xl border border-primary-500/20 bg-bg-elevated/30 animate-float [animation-delay:1900ms]">
+              <Code2 className="h-8 w-8 stroke-[1.35]" />
+            </div>
+            <span className="absolute left-14 top-[4.6rem] h-px w-16 rotate-[28deg] bg-primary-500/30" />
+            <span className="absolute right-14 top-[4.8rem] h-px w-16 -rotate-[28deg] bg-primary-500/30" />
+            <span className="absolute bottom-[4.9rem] left-16 h-px w-16 -rotate-[27deg] bg-primary-500/30" />
+            <span className="absolute bottom-[4.9rem] right-16 h-px w-16 rotate-[27deg] bg-primary-500/30" />
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -37,7 +81,7 @@ export const Home = () => {
 
             {/* Typewriter heading */}
             <div className="font-mono text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-primary-500">
-              <Typewriter text="Aspiring DevOps Engineer" delay={80} />
+              <Typewriter text="Full-Stack Developer | DevOps & Cloud Engineer" delay={50} />
               <span className="terminal-cursor ml-2" />
             </div>
 
@@ -124,7 +168,7 @@ export const Home = () => {
               Featured Technologies
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              A curated selection of the technologies I work with daily to build and deploy scalable systems
+              A practical toolkit for building complete products and understanding the systems behind them
             </p>
           </motion.div>
 
@@ -186,11 +230,10 @@ export const Home = () => {
             className="bg-bg-elevated border border-primary-500/20 p-12 rounded-2xl shadow-glow"
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-6">
-              Ready to Deploy Your Vision?
+              Ready to Build Something Useful?
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              Let's build something amazing together. From infrastructure automation to full-stack development, 
-              I'm here to turn your ideas into production reality.
+              Let's turn your idea into a polished product — from the user experience and APIs to deployment and the systems that keep it running.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -200,7 +243,7 @@ export const Home = () => {
                 Start a Project
               </Link>
               <a
-                href="https://github.com/pawanpatil2108"
+                href={CONTACT.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-semibold rounded-lg transition-all duration-200"

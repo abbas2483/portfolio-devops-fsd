@@ -53,40 +53,16 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare form data for Web3Forms API
-      const formDataToSubmit = new FormData();
-      formDataToSubmit.append("access_key", "103fd015-c88b-480d-bf6c-3e23a19ea4fe");
-      formDataToSubmit.append("name", formData.name);
-      formDataToSubmit.append("email", formData.email);
-      formDataToSubmit.append("subject", formData.subject);
-      formDataToSubmit.append("message", formData.message);
-
-      // Submit to Web3Forms API
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formDataToSubmit
-      });
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await response.json();
-
-      if (data.success) {
-        setIsSubmitted(true);
-        
-        // Reset form after success
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormData({ name: '', email: '', subject: '', message: '' });
-        }, 3000);
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch (error) {
-      // Handle network or other errors
-      setErrors(prev => ({ ...prev, message: "Failed to send message. Please try again." }));
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(`From: ${formData.name} (${formData.email})\n\n${formData.message}`);
+      window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }, 3000);
+    } catch {
+      setErrors((prev) => ({ ...prev, message: 'Unable to open your email client. Please email me directly.' }));
     } finally {
       setIsSubmitting(false);
     }

@@ -7,24 +7,24 @@ export const About = () => {
   const timeline = [
     {
       year: 'Sep 2025 – Present',
-      title: 'System Administrator Intern',
-      company: 'Konsola Infotech Pvt. Ltd. (On-site)',
+      title: 'Full Stack Developer Intern',
+      company: 'Adporate Commercials',
       description:
-        'Performing server configuration, monitoring, and maintenance on Linux (RHEL) environments, ensuring high availability of critical services. Supporting infrastructure operations and resolving network and system issues, reducing downtime through proactive troubleshooting.',
+        'Built and integrated full-stack features using React, Node.js, Express, and Supabase. Collaborated with teams to deliver production-ready web applications, implemented testing and secure authentication using JWT and bcrypt.js, and used AI-assisted development tools such as Cursor and GitHub Copilot to accelerate feature delivery.',
       icon: Code,
     },
     {
-      year: '2022 – 2026',
-      title: 'B.Tech — Cloud Computing & Information Security',
-      company: 'Sandip University, Nashik, Maharashtra',
-      description: 'Currently pursuing B.Tech with a CGPA of 8.18. Focused on cloud infrastructure, containerization, networking, and information security fundamentals.',
+      year: 'Mar 2025 – Aug 2025',
+      title: 'Project Management Intern',
+      company: 'Adporate Commercials',
+      description: 'Managed project requirements, timelines, and task allocation across teams. Coordinated with clients and developers, monitored progress and testing, and helped ensure projects were delivered according to quality requirements and deadlines.',
       icon: Calendar,
     },
     {
-      year: '2022',
-      title: 'HSC — Science',
-      company: 'Rashtriya Vidyalaya Jr. College, Chalisgaon',
-      description: 'Completed Higher Secondary Certificate with 62.50% in Science stream.',
+      year: '2022 – 2026',
+      title: 'B.Tech in Computer Science',
+      company: 'ABES Engineering College',
+      description: 'Pursuing a Bachelor of Technology in Computer Science with a focus on software development, systems, cloud, and emerging DevOps practices.',
       icon: MapPin,
     },
   ];
@@ -32,30 +32,35 @@ export const About = () => {
   const philosophyPoints = [
     {
       icon: Zap,
-      title: 'Automation First',
-      description: 'Every manual process should be automated — every deployment should be consistent, repeatable, and reliable.',
+      title: 'Build End-to-End',
+      description: 'I enjoy working across the product lifecycle, from polished interfaces and APIs to deployment and the systems that keep them running.',
     },
     {
       icon: Code,
-      title: 'Infrastructure as Code',
-      description: 'Treat infrastructure with the same discipline as application code — version-controlled, reviewable, and auditable.',
+      title: 'Understand the Systems',
+      description: 'Containers, servers, networking, and CI/CD are not an afterthought; they are how an application becomes a dependable product.',
     },
     {
       icon: MapPin,
-      title: 'Cloud Native',
-      description: 'Build for the cloud from day one. Embrace containerization, orchestration, and scalable distributed systems.',
+      title: 'Learn by Building',
+      description: 'I prefer understanding how things work internally, then applying that knowledge in real projects and practical experiments.',
     },
   ];
 
   const certifications = [
     {
-      name: 'Oracle Cloud Infrastructure Foundations',
-      issuer: 'Oracle',
+      name: 'Programming Essentials In Python Programming',
+      issuer: 'Cisco NetAcad • 29/12/2023',
       icon: Award,
     },
     {
-      name: 'Oracle Cloud DevOps Professional',
-      issuer: 'Oracle',
+      name: 'AWS Cloud Practitioner Essentials',
+      issuer: 'AWS • 05/02/2025',
+      icon: Award,
+    },
+    {
+      name: 'Cloud Computing Fundamentals',
+      issuer: 'IBM • 16/08/2025',
       icon: Award,
     },
   ];
@@ -88,28 +93,24 @@ export const About = () => {
                 </div>
                 <div className="space-y-4 text-neutral-200 leading-relaxed">
                   <Typewriter
-                    text="Hello, I'm Pawan Patil — building reliable systems from the ground up."
+                    text="Hello, I'm Sayed Abbas Raza — building products end-to-end."
                     delay={30}
                     className="text-primary-500 font-semibold block mb-4"
                   />
                   <p>
-                    I'm an aspiring DevOps Engineer with a strong foundation in cloud infrastructure,
-                    containerization, and automation. Currently pursuing B.Tech in Cloud Computing &amp;
-                    Information Security at Sandip University, Nashik (CGPA: 8.18).
+                    I'm a Full-Stack Developer who enjoys building complete products rather than staying confined to a single layer of the stack. My current work revolves around React, Next.js, Node.js, Express, databases, authentication, APIs, and modern deployment platforms.
                   </p>
                   <p>
-                    I have hands-on experience deploying microservices on AWS EC2 with Kubernetes and Docker,
-                    and practical exposure to CI/CD pipelines via Jenkins. My work spans Linux (RHEL) system
-                    administration, shell scripting, and Python-based automation.
+                    Over time, I found myself increasingly interested in what happens underneath the application itself. Servers, Linux, networking, containers, deployment, and CI/CD started making more sense to me than they initially seemed to. That curiosity is what pulled me toward DevOps and cloud engineering.
                   </p>
                   <p>
-                    As a System Administrator Intern at Konsola Infotech Pvt. Ltd., I perform server
-                    configuration, monitoring, and maintenance — ensuring high availability of critical
-                    services and resolving infrastructure issues proactively.
+                    I'm currently pursuing a B.Tech in Computer Science at ABES Engineering College. Alongside academics, I've worked on real-world web projects and gained professional experience through roles involving full-stack development and project management at Adporate Commercials.
                   </p>
                   <p className="text-primary-500 font-medium">
-                    For me, DevOps is about precision and repeatability — creating systems that let
-                    developers ship confidently and teams operate without friction.
+                    My current technical focus sits at the intersection of application development and infrastructure: building applications with modern full-stack technologies, containerizing them with Docker, working with Linux and servers, understanding networking, and experimenting with CI/CD using tools such as Jenkins.
+                  </p>
+                  <p>
+                    I value learning by building. My goal is to become an engineer who can not only build the application, but also understand how it is deployed, connected, secured, and kept running.
                   </p>
                 </div>
               </div>
@@ -130,23 +131,27 @@ export const About = () => {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Status</span>
-                    <span className="text-primary-500 font-mono">Intern @ Konsola Infotech</span>
+                    <span className="text-primary-500 font-mono">Open for opportunities and full-time roles</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Cloud Platforms</span>
-                    <span className="text-primary-500 font-mono">AWS (EC2, S3, IAM)</span>
+                    <span className="text-primary-500 font-mono">AWS, Azure, Vercel, Netlify</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Projects</span>
-                    <span className="text-primary-500 font-mono">2+ deployed</span>
+                    <span className="text-primary-500 font-mono">2 full-stack + DevOps experiments</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">CGPA</span>
-                    <span className="text-primary-500 font-mono">8.18 / 10</span>
+                    <span className="text-primary-500 font-mono">7.9 / 10</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-neutral-400">Location</span>
-                    <span className="text-primary-500 font-mono">Nashik, Maharashtra</span>
+                    <span className="text-primary-500 font-mono">Crossing Republik, Ghaziabad</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-neutral-400">Primary Focus</span>
+                    <span className="text-primary-500 font-mono">Full-Stack Development + DevOps &amp; Cloud</span>
                   </div>
                 </div>
               </div>
@@ -157,12 +162,14 @@ export const About = () => {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    'Container Orchestration',
-                    'CI/CD Pipelines',
-                    'Cloud Infrastructure',
-                    'Linux Administration',
-                    'Microservices Deployment',
-                    'Infrastructure as Code',
+                    'Full-Stack Web Development',
+                    'Modern React & Next.js Applications',
+                    'Backend & API Development',
+                    'Containerization with Docker',
+                    'Linux & Server Management',
+                    'Networking & Deployment',
+                    'CI/CD & Jenkins',
+                    'Cloud & Infrastructure Fundamentals',
                   ].map((skill) => (
                     <span
                       key={skill}
@@ -216,7 +223,7 @@ export const About = () => {
               Career Timeline
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              My journey from cloud computing student to DevOps practitioner
+              My journey through full-stack development, product delivery, and growing infrastructure expertise
             </p>
           </motion.div>
 

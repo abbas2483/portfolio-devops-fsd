@@ -1,89 +1,40 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
 import { Typewriter } from '../components/Typewriter';
 import { Cloud, Container, Code, Database, Terminal as TerminalIcon, Server } from 'lucide-react';
-import { SKILLS_BY_CATEGORY } from '../data/portfolio';
+import { SKILLS, SKILL_CATEGORIES } from '../data/portfolio';
 
 export const Skills = () => {
   const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
   const [currentInput, setCurrentInput] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
+  const terminalInputRef = useRef<HTMLInputElement>(null);
 
-  // ─── Pawan's actual skills by category ───────────────────────────────────────
-  const categories = [
-    {
-      id: 'cloud',
-      title: 'Cloud Platforms',
-      icon: Cloud,
-      color: 'text-blue-500',
-      skills: [
-        { name: 'AWS EC2', level: 75 },
-        { name: 'AWS S3', level: 70 },
-        { name: 'AWS IAM', level: 65 },
-        { name: 'Oracle Cloud (OCI)', level: 60 },
-      ],
-    },
-    {
-      id: 'containers',
-      title: 'Containers & Orchestration',
-      icon: Container,
-      color: 'text-blue-400',
-      skills: [
-        { name: 'Docker', level: 80 },
-        { name: 'Docker Compose', level: 75 },
-        { name: 'Kubernetes (kubeadm)', level: 70 },
-        { name: 'DockerHub', level: 70 },
-      ],
-    },
-    {
-      id: 'os',
-      title: 'Operating Systems & Scripting',
-      icon: TerminalIcon,
-      color: 'text-purple-500',
-      skills: [
-        { name: 'Linux (RHEL)', level: 80 },
-        { name: 'Shell Scripting', level: 75 },
-        { name: 'Python', level: 65 },
-        { name: 'Bash', level: 70 },
-      ],
-    },
-    {
-      id: 'devops',
-      title: 'DevOps & CI/CD',
-      icon: Code,
-      color: 'text-green-500',
-      skills: [
-        { name: 'Jenkins', level: 65 },
-        { name: 'Git', level: 80 },
-        { name: 'GitHub', level: 80 },
-        { name: 'VS Code', level: 85 },
-      ],
-    },
-    {
-      id: 'networking',
-      title: 'Networking & Proxy',
-      icon: Server,
-      color: 'text-orange-500',
-      skills: [
-        { name: 'NGINX (Reverse Proxy)', level: 70 },
-        { name: 'DNS & Routing', level: 60 },
-        { name: 'Load Balancing', level: 55 },
-      ],
-    },
-    {
-      id: 'softskills',
-      title: 'Soft Skills',
-      icon: Database,
-      color: 'text-red-500',
-      skills: [
-        { name: 'Communication', level: 85 },
-        { name: 'Collaboration', level: 85 },
-        { name: 'Problem-Solving', level: 80 },
-        { name: 'Time Management', level: 80 },
-      ],
-    },
-  ];
+  const focusTerminalInput = () => {
+    requestAnimationFrame(() => terminalInputRef.current?.focus());
+  };
+
+  const categoryVisuals = {
+    development: { icon: Code, color: 'text-green-500' },
+    cloud: { icon: Cloud, color: 'text-blue-500' },
+    containers: { icon: Container, color: 'text-blue-400' },
+    os: { icon: TerminalIcon, color: 'text-purple-500' },
+    devops: { icon: Code, color: 'text-green-500' },
+    networking: { icon: Server, color: 'text-orange-500' },
+    database: { icon: Database, color: 'text-red-500' },
+    softskills: { icon: Database, color: 'text-pink-500' },
+  };
+
+  const categories = SKILL_CATEGORIES.map((category) => ({
+    ...category,
+    ...categoryVisuals[category.id],
+    skills: category.skills.map((skill) =>
+      typeof skill === 'string'
+        ? SKILLS.find((item) => item.name === skill)!
+        : skill,
+    ),
+  }));
 
   const commands = {
     help: [
@@ -125,7 +76,9 @@ export const Skills = () => {
           break;
         case 'clear':
           commands.clear();
+          setCurrentInput('');
           setIsProcessing(false);
+          focusTerminalInput();
           return;
         case 'ls':
           const categoryId = args[1];
@@ -149,6 +102,7 @@ export const Skills = () => {
       setTerminalOutput((prev) => [...prev, `$ ${input}`, ...output, '']);
       setCurrentInput('');
       setIsProcessing(false);
+      focusTerminalInput();
     }, 500);
   };
 
@@ -159,15 +113,15 @@ export const Skills = () => {
   };
 
   return (
-    <div className="min-h-screen bg-bg-page">
+    <div className="min-h-screen bg-bg-page flex flex-col">
       {/* Terminal Header */}
       <TerminalHeader
-        command="ls -la skills/"
-        description="Exploring technical expertise across cloud, DevOps, and infrastructure domains"
+        command="skills --stack fullstack,devops,cloud"
+        description="Exploring full-stack development, DevOps, cloud, and infrastructure skills"
       />
 
       {/* Skills Categories */}
-      <section className="py-24">
+      <section className="order-2 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -180,7 +134,7 @@ export const Skills = () => {
               Technical Expertise
             </h2>
             <p className="text-neutral-400 max-w-2xl mx-auto">
-              Comprehensive skill set spanning cloud infrastructure, containerization, Linux administration, and DevOps practices
+              Full-stack development backed by practical cloud, deployment, infrastructure, and automation experience
             </p>
           </motion.div>
 
@@ -261,7 +215,7 @@ export const Skills = () => {
       </section>
 
       {/* Interactive Terminal */}
-      <section className="py-24 bg-bg-surface/30">
+      <section className="order-1 py-24 bg-bg-surface/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -293,7 +247,7 @@ export const Skills = () => {
                   <div className="w-3 h-3 rounded-full bg-yellow-500" />
                   <div className="w-3 h-3 rounded-full bg-primary-500" />
                 </div>
-                <span className="font-mono text-sm text-neutral-400">pawan@devops:~$</span>
+                <span className="font-mono text-sm text-neutral-400">abbas@portfolio:~$</span>
               </div>
 
               {/* Terminal Content */}
@@ -301,7 +255,7 @@ export const Skills = () => {
                 {terminalOutput.length === 0 && (
                   <div className="text-neutral-400">
                     <Typewriter
-                      text="Welcome to Pawan's Skills Explorer. Type 'help' to see available commands."
+                      text="Welcome to Abbas's Skills Explorer. Type 'help' to see available commands."
                       delay={30}
                       className="block"
                     />
@@ -342,6 +296,7 @@ export const Skills = () => {
                 <div className="flex items-center">
                   <span className="text-accent-500 mr-2">$</span>
                   <input
+                    ref={terminalInputRef}
                     type="text"
                     value={currentInput}
                     onChange={(e) => setCurrentInput(e.target.value)}
@@ -362,12 +317,15 @@ export const Skills = () => {
               {[
                 { cmd: 'help', desc: 'Show commands' },
                 { cmd: 'ls cloud', desc: 'Cloud skills' },
-                { cmd: 'ls containers', desc: 'Docker & K8s' },
+                { cmd: 'ls development', desc: 'Full-stack skills' },
                 { cmd: 'levels', desc: 'Proficiency guide' },
               ].map((item) => (
                 <button
                   key={item.cmd}
-                  onClick={() => setCurrentInput(item.cmd)}
+                  onClick={() => {
+                    setCurrentInput(item.cmd);
+                    focusTerminalInput();
+                  }}
                   className="p-3 bg-bg-elevated border border-neutral-700 rounded-lg text-left hover:border-primary-500/50 transition-colors group"
                 >
                   <div className="font-mono text-sm text-primary-500 group-hover:text-primary-400">

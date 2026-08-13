@@ -1,20 +1,18 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, ChevronRight, BookOpen, FileText } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/skills', label: 'Skills' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/blog', label: 'Blog', icon: BookOpen },
-    { path: '/case-studies', label: 'Case Studies', icon: FileText },
-    { path: '/contact', label: 'Contact' },
+    { path: '/', label: 'Home', command: './build --fullstack --cloud' },
+    { path: '/about', label: 'About', command: 'cat ./about/abbas.md' },
+    { path: '/skills', label: 'Skills', command: 'skills --stack fullstack,devops,cloud' },
+    { path: '/projects', label: 'Projects', command: 'ls ./projects' },
+    { path: '/contact', label: 'Contact', command: './connect --available' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -29,7 +27,7 @@ export const Navbar = () => {
               <div className="text-primary-500 font-mono font-bold text-xl tracking-wide">
                 <span className="text-accent-500">&gt;</span>
                 <span className="group-hover:text-primary-500 transition-colors duration-200">
-                  _
+                  Sayed Abbas Raza
                 </span>
               </div>
             </Link>
@@ -37,23 +35,12 @@ export const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => {
-                const IconComponent = item.icon;
                 return (
                   <Link
                     key={item.path}
                     to={item.path}
                     className="relative px-3 py-2 text-sm font-medium transition-all duration-200 group flex items-center gap-2"
                   >
-                    {IconComponent && (
-                      <IconComponent 
-                        size={16} 
-                        className={`${
-                          isActive(item.path)
-                            ? 'text-primary-500'
-                            : 'text-neutral-200 group-hover:text-primary-500'
-                        }`}
-                      />
-                    )}
                     <span
                       className={`font-mono ${
                         isActive(item.path)
@@ -100,7 +87,6 @@ export const Navbar = () => {
           >
             <div className="px-4 py-2 space-y-1">
               {navItems.map((item) => {
-                const IconComponent = item.icon;
                 return (
                   <Link
                     key={item.path}
@@ -113,15 +99,7 @@ export const Navbar = () => {
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      {IconComponent && (
-                        <IconComponent 
-                          size={16} 
-                          className={`${
-                            isActive(item.path) ? 'text-primary-500' : ''
-                          }`}
-                        />
-                      )}
-                      <span className="font-mono">$ {item.label.toLowerCase()}</span>
+                      <span className="font-mono">$ {item.command}</span>
                     </div>
                     <ChevronRight
                       size={16}

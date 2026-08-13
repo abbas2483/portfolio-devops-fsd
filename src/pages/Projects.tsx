@@ -1,49 +1,20 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TerminalHeader } from '../components/TerminalHeader';
-import { ExternalLink, Github, Filter } from 'lucide-react';
-
-// ─── Pawan's actual projects ──────────────────────────────────────────────────
-const PROJECTS = [
-  {
-    title: 'Kubernetes Microservices Deployment on AWS EC2',
-    category: 'devops',
-    description:
-      'Deployed a containerized microservices application on a Kubernetes cluster bootstrapped with kubeadm on AWS EC2, managing frontend, backend, and database services via Deployments and Services. Automated deployments with YAML manifests, achieving consistent and repeatable environment provisioning across stages.',
-    technologies: ['Kubernetes', 'Docker', 'AWS EC2', 'Linux', 'Node.js', 'MongoDB', 'Nginx', 'YAML'],
-    githubLink: 'https://github.com/pawanpatil2108',
-    websiteLink: null,
-    image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&auto=format&fit=crop&q=60',
-  },
-  {
-    title: 'Microservices-Based App Deployment Using Docker',
-    category: 'devops',
-    description:
-      'Architected a multi-container microservices setup using Docker Compose, improving service isolation and simplifying multi-service orchestration. Configured NGINX as a reverse proxy to route traffic between services, enhancing request handling and inter-service communication.',
-    technologies: ['Docker', 'Docker Compose', 'NGINX', 'Reverse Proxy', 'Linux'],
-    githubLink: 'https://github.com/pawanpatil2108',
-    websiteLink: null,
-    image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&auto=format&fit=crop&q=60',
-  },
-];
-
-const PROJECTS_BY_CATEGORY = {
-  all: PROJECTS,
-  devops: PROJECTS.filter((p) => p.category === 'devops'),
-  fullstack: PROJECTS.filter((p) => p.category === 'fullstack'),
-};
+import { ExternalLink, Github, Filter, Code2 } from 'lucide-react';
+import { PROJECTS as PORTFOLIO_PROJECTS, PROJECTS_BY_CATEGORY as PORTFOLIO_PROJECTS_BY_CATEGORY, CONTACT } from '../data/portfolio';
 
 export const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filters = [
-    { id: 'all', label: 'All Projects', count: PROJECTS_BY_CATEGORY.all.length },
-    { id: 'devops', label: 'DevOps', count: PROJECTS_BY_CATEGORY.devops.length },
-    { id: 'fullstack', label: 'Full-Stack', count: PROJECTS_BY_CATEGORY.fullstack.length },
+    { id: 'all', label: 'All Projects', count: PORTFOLIO_PROJECTS_BY_CATEGORY.all.length },
+    { id: 'devops', label: 'DevOps', count: PORTFOLIO_PROJECTS_BY_CATEGORY.devops.length },
+    { id: 'fullstack', label: 'Full-Stack', count: PORTFOLIO_PROJECTS_BY_CATEGORY.fullstack.length },
   ];
 
   const getProjects = () => {
-    return PROJECTS_BY_CATEGORY[activeFilter as keyof typeof PROJECTS_BY_CATEGORY] || PROJECTS_BY_CATEGORY.all;
+    return PORTFOLIO_PROJECTS_BY_CATEGORY[activeFilter as keyof typeof PORTFOLIO_PROJECTS_BY_CATEGORY] || PORTFOLIO_PROJECTS_BY_CATEGORY.all;
   };
 
   return (
@@ -105,11 +76,17 @@ export const Projects = () => {
               >
                 {/* Project Image */}
                 <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary-500/20 via-bg-elevated to-accent-500/10 flex items-center justify-center">
+                      <Code2 size={48} className="text-primary-500/70" aria-label={`${project.title} placeholder`} />
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-surface via-transparent to-transparent opacity-60" />
 
                   {/* Project Type Badge */}
@@ -155,15 +132,17 @@ export const Projects = () => {
 
                   {/* Action Buttons */}
                   <div className="flex items-center space-x-4 pt-4">
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-neutral-400 hover:text-primary-500 transition-colors group/btn"
-                    >
-                      <Github size={16} className="group-hover/btn:scale-110 transition-transform" />
-                      <span className="text-sm font-mono">Code</span>
-                    </a>
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 text-neutral-400 hover:text-primary-500 transition-colors group/btn"
+                      >
+                        <Github size={16} className="group-hover/btn:scale-110 transition-transform" />
+                        <span className="text-sm font-mono">Code</span>
+                      </a>
+                    )}
 
                     {project.websiteLink && (
                       <a
@@ -212,20 +191,20 @@ export const Projects = () => {
               <div className="space-y-2 text-neutral-200">
                 <div className="flex justify-between">
                   <span>Total Projects:</span>
-                  <span className="text-primary-500">{PROJECTS_BY_CATEGORY.all.length}</span>
+                  <span className="text-primary-500">{PORTFOLIO_PROJECTS_BY_CATEGORY.all.length}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>DevOps Projects:</span>
-                  <span className="text-primary-500">{PROJECTS_BY_CATEGORY.devops.length}</span>
+                  <span className="text-primary-500">{PORTFOLIO_PROJECTS_BY_CATEGORY.devops.length}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Full-Stack Projects:</span>
-                  <span className="text-primary-500">{PROJECTS_BY_CATEGORY.fullstack.length}</span>
+                  <span className="text-primary-500">{PORTFOLIO_PROJECTS_BY_CATEGORY.fullstack.length}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Technologies Used:</span>
                   <span className="text-primary-500">
-                    {new Set(PROJECTS_BY_CATEGORY.all.flatMap((p) => p.technologies)).size}+
+                    {new Set(PORTFOLIO_PROJECTS.flatMap((p) => p.technologies)).size}+
                   </span>
                 </div>
               </div>
@@ -234,8 +213,7 @@ export const Projects = () => {
                 <div className="flex items-center space-x-2">
                   <span className="text-accent-500">$</span>
                   <span>
-                    echo "Each project demonstrates real-world implementation of cloud-native
-                    architecture and container orchestration"
+                    echo "Full-stack projects alongside practical DevOps and CI/CD experiments"
                   </span>
                 </div>
               </div>
@@ -258,12 +236,12 @@ export const Projects = () => {
               Interested in Collaboration?
             </h2>
             <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              These projects showcase my expertise in DevOps and cloud infrastructure.
+              These projects reflect my full-stack work and growing DevOps and cloud focus.
               Let's discuss how we can work together on your next project.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://github.com/pawanpatil2108"
+                href={CONTACT.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-bg-surface font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200 shadow-glow hover:shadow-card-hover"

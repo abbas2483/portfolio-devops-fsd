@@ -63,9 +63,9 @@ export const Footer = () => {
               <span>copyright.txt</span>
             </div>
             <div className="mt-2 space-y-1 text-xs">
-              <p>© {currentYear} DevOps & Cloud Engineer</p>
-              <p>Built with React, TypeScript, and Cyber Terminal Aesthetic</p>
-              <p className="text-primary-500">Status: Available for opportunities</p>
+              <p>© {currentYear} Full-Stack Developer + DevOps & Cloud Engineer</p>
+              <p>Built with React, TypeScript, and a technical terminal-inspired aesthetic</p>
+              <p className="text-primary-500">Status: Open for opportunities and full-time roles</p>
             </div>
           </div>
 

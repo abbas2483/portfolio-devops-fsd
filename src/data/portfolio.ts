@@ -1,83 +1,110 @@
-export const HERO_CONTENT = "Building reliable systems from containers to cloud. Aspiring DevOps Engineer | Cloud & Infrastructure Specialist. Passionate about automating deployments, orchestrating containers with Kubernetes, and managing scalable cloud infrastructure on AWS.";
+export const HERO_CONTENT =
+  'Building products end-to-end — from polished full-stack experiences to the systems that keep them running. Full-Stack Developer | DevOps & Cloud Engineer.';
 
-export const ABOUT_TEXT = "I'm an aspiring DevOps Engineer with a strong foundation in cloud infrastructure, containerization, and automation. Currently pursuing B.Tech in Cloud Computing & Information Security at Sandip University, Nashik (CGPA: 8.18). As a System Administrator Intern at Konsola Infotech Pvt. Ltd., I perform server configuration, monitoring, and maintenance on Linux (RHEL) environments, ensuring high availability of critical services. I have hands-on experience deploying microservices on AWS EC2 with Kubernetes bootstrapped via kubeadm, and practical exposure to CI/CD pipelines via Jenkins. I work with Docker and Docker Compose for containerization, NGINX as a reverse proxy, and Python and Shell Scripting for automation. For me, DevOps is about precision and repeatability — creating systems that let developers ship confidently and teams operate without friction.";
+export const ABOUT_TEXT =
+  "I'm a Full-Stack Developer with a growing focus on DevOps, cloud infrastructure, and the systems behind modern applications. I enjoy building products with React, Next.js, Node.js, and modern databases, but I'm equally interested in what happens beyond the application layer — containers, Linux, networking, deployment, CI/CD, and servers. DevOps especially clicked with me because the underlying systems and core computing concepts simply make more sense to me; understanding how software actually reaches and runs on a machine is what keeps me curious.";
 
 export const SKILLS = [
-  // Cloud
-  { name: 'AWS EC2', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', category: 'cloud', level: 75 },
-  { name: 'AWS S3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', category: 'cloud', level: 70 },
-  { name: 'AWS IAM', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', category: 'cloud', level: 65 },
-  { name: 'Oracle Cloud (OCI)', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg', category: 'cloud', level: 60 },
-
-  // Containers
-  { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', category: 'containers', level: 80 },
-  { name: 'Docker Compose', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', category: 'containers', level: 75 },
-  { name: 'Kubernetes (kubeadm)', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg', category: 'containers', level: 70 },
-  { name: 'DockerHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', category: 'containers', level: 70 },
-
-  // Infrastructure
-  { name: 'Linux (RHEL)', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-plain.svg', category: 'infrastructure', level: 80 },
-  { name: 'Shell Scripting', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg', category: 'infrastructure', level: 75 },
-  { name: 'Bash', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg', category: 'infrastructure', level: 70 },
-  { name: 'NGINX', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg', category: 'infrastructure', level: 70 },
-
-  // DevOps / Automation
-  { name: 'Jenkins', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-plain.svg', category: 'devops', level: 65 },
+  { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: 'development', level: 75 },
+  { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', category: 'development', level: 75 },
+  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', category: 'development', level: 80 },
+  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', category: 'development', level: 75 },
+  { name: 'Express.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', category: 'development', level: 70 },
+  { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', category: 'development', level: 75 },
+  { name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', category: 'development', level: 65 },
+  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', category: 'development', level: 60 },
+  { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', category: 'cloud', level: 55 },
+  { name: 'Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg', category: 'cloud', level: 50 },
+  { name: 'Vercel', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg', category: 'cloud', level: 70 },
+  { name: 'Netlify', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg', category: 'cloud', level: 65 },
+  { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', category: 'containers', level: 60 },
+  { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', category: 'infrastructure', level: 70 },
+  { name: 'Networking', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', category: 'infrastructure', level: 60 },
+  { name: 'Server Management', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', category: 'infrastructure', level: 65 },
+  { name: 'Jenkins', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg', category: 'devops', level: 55 },
+  { name: 'CI/CD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg', category: 'devops', level: 60 },
   { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', category: 'devops', level: 80 },
   { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', category: 'devops', level: 80 },
-  { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', category: 'devops', level: 85 },
-
-  // Development
-  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', category: 'development', level: 65 },
-  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg', category: 'development', level: 55 },
-
-  // Databases
-  { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', category: 'database', level: 55 },
+  { name: 'Deployment', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', category: 'devops', level: 70 },
+  { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', category: 'database', level: 70 },
+  { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', category: 'database', level: 65 },
+  { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', category: 'database', level: 70 },
+  { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg', category: 'database', level: 70 },
 ];
+
+export const SKILL_CATEGORIES = [
+  { id: 'development', title: 'Full-Stack Development', skills: ['React', 'Next.js', 'JavaScript', 'Node.js', 'Express.js', 'Tailwind CSS', 'C++', 'Python'] },
+  { id: 'cloud', title: 'Cloud & Deployment', skills: ['AWS', 'Azure', 'Vercel', 'Netlify'] },
+  { id: 'containers', title: 'Containers', skills: ['Docker'] },
+  { id: 'os', title: 'Operating Systems', skills: [{ name: 'Linux', level: 70 }, { name: 'Windows', level: 85 }] },
+  { id: 'devops', title: 'DevOps & Automation', skills: ['Jenkins', 'CI/CD', 'Git', 'GitHub', 'Deployment', 'Server Management'] },
+  { id: 'networking', title: 'Networking & Infrastructure', skills: ['Networking', 'Server Management', 'Docker', 'Linux'] },
+  { id: 'database', title: 'Databases & Backend Services', skills: ['MongoDB', 'MySQL', 'Firebase', 'Supabase'] },
+  { id: 'softskills', title: 'Professional Strengths', skills: [{ name: 'Project Coordination', level: 75 }, { name: 'Team Collaboration', level: 80 }, { name: 'Client Communication', level: 70 }, { name: 'Requirement Management', level: 75 }, { name: 'Problem Solving', level: 80 }] },
+] as const;
 
 export const PROJECTS = [
   {
-    title: 'Kubernetes Microservices Deployment on AWS EC2',
-    image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    description: 'Deployed a containerized microservices application on a Kubernetes cluster bootstrapped with kubeadm on AWS EC2, managing frontend, backend, and database services via Deployments and Services. Automated deployments with YAML manifests, achieving consistent and repeatable environment provisioning across stages.',
-    technologies: ['Kubernetes', 'Docker', 'AWS EC2', 'Linux', 'Node.js', 'MongoDB', 'Nginx', 'YAML'],
-    category: 'devops',
-    githubLink: 'https://github.com/pawanpatil2108',
-    websiteLink: '',
+    title: 'CargoShift Website',
+    image: null,
+    description: 'A full-stack logistics platform built for managing logistics workflows, live tracking, and user interactions. The project involved building the web experience, integrating payment functionality, and improving the overall user flow for a production-oriented application.',
+    technologies: ['Next.js', 'Tailwind CSS', 'Firebase', 'Razorpay'],
+    category: 'fullstack',
+    githubLink: null,
+    websiteLink: null,
   },
   {
-    title: 'Microservices-Based App Deployment Using Docker',
-    image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    description: 'Architected a multi-container microservices setup using Docker Compose, improving service isolation and simplifying multi-service orchestration. Configured NGINX as a reverse proxy to route traffic between services, enhancing request handling and inter-service communication.',
-    technologies: ['Docker', 'Docker Compose', 'NGINX', 'Reverse Proxy', 'Linux'],
+    title: 'Apurv FMCG Website',
+    image: null,
+    description: 'An end-to-end FMCG ordering web application with secure authentication, dynamic cart functionality, responsive UI, and payment integration. The project covered requirements, development, testing, and final deployment.',
+    technologies: ['Next.js', 'Tailwind CSS', 'Supabase', 'Razorpay'],
+    category: 'fullstack',
+    githubLink: null,
+    websiteLink: null,
+  },
+  {
+    title: 'Two-Tier Flask Application Containerization',
+    image: null,
+    description: 'Containerized a two-tier Flask application to understand how application services and their dependencies can be packaged, connected, and run consistently using Docker.',
+    technologies: ['Docker', 'Flask', 'Python', 'Linux'],
     category: 'devops',
-    githubLink: 'https://github.com/pawanpatil2108',
-    websiteLink: '',
+    githubLink: null,
+    websiteLink: null,
+  },
+  {
+    title: 'Portfolio CI Pipeline with Jenkins',
+    image: null,
+    description: 'Built a Jenkins-based CI workflow for a portfolio application to explore automated builds and deployment-oriented development workflows.',
+    technologies: ['Jenkins', 'Git', 'CI/CD', 'Next.js'],
+    category: 'devops',
+    githubLink: null,
+    websiteLink: null,
   },
 ];
 
 export const CONTACT = {
-  address: 'Nashik, Maharashtra, India',
-  phoneNo: '+91 7888072108',
-  email: 'patilpawan2108@gmail.com',
+  address: 'Crossing Republik, Ghaziabad, India',
+  phoneNo: '+91 8756585368',
+  email: 'sayedabbasraza38@gmail.com',
+  portfolio: 'https://www.abbasraza.in',
   social: {
-    github: 'https://github.com/pawanpatil2108',
-    linkedin: 'https://linkedin.com/in/pawanpatil2108',
-    twitter: '',
-  }
+    github: 'https://github.com/abbas2483',
+    linkedin: 'https://www.linkedin.com/in/sayed-abbas-raza-469402253/',
+    twitter: 'https://x.com/Abbasraza66',
+  },
 };
 
 export const SKILLS_BY_CATEGORY = {
-  cloud: SKILLS.filter(skill => skill.category === 'cloud'),
-  containers: SKILLS.filter(skill => skill.category === 'containers'),
-  infrastructure: SKILLS.filter(skill => skill.category === 'infrastructure'),
-  devops: SKILLS.filter(skill => skill.category === 'devops'),
-  development: SKILLS.filter(skill => skill.category === 'development'),
-  database: SKILLS.filter(skill => skill.category === 'database'),
+  cloud: SKILLS.filter((skill) => skill.category === 'cloud'),
+  containers: SKILLS.filter((skill) => skill.category === 'containers'),
+  infrastructure: SKILLS.filter((skill) => skill.category === 'infrastructure'),
+  devops: SKILLS.filter((skill) => skill.category === 'devops'),
+  development: SKILLS.filter((skill) => skill.category === 'development'),
+  database: SKILLS.filter((skill) => skill.category === 'database'),
 };
 
 export const PROJECTS_BY_CATEGORY = {
   all: PROJECTS,
-  devops: PROJECTS.filter(project => project.category === 'devops'),
-  fullstack: PROJECTS.filter(project => project.category === 'fullstack'),
+  devops: PROJECTS.filter((project) => project.category === 'devops'),
+  fullstack: PROJECTS.filter((project) => project.category === 'fullstack'),
 };
